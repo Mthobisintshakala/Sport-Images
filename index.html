@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Sports Image Generator Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.14.0"
+        }
+      }
+    </script>
+    <script type="module" src="index.tsx"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="header-content">
+          <svg class="soccer-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,4.07C13.3,4.56 15.2,5.91 16.5,7.74L14.54,8.12L13,5.43M5.1,6.3C6.5,5.13 8.16,4.32 10,4.07V6.11L8.12,7.39M4.07,13C4.56,10.7 5.91,8.8 7.74,7.5L8.12,9.46L5.43,11M6.3,18.9C5.13,17.5 4.32,15.84 4.07,14H6.11L7.39,15.88L6.3,18.9M13,19.93C10.7,19.44 8.8,18.09 7.5,16.26L9.46,15.88L11,18.57M18.9,17.7C17.5,18.87 15.84,19.68 14,19.93V17.89L15.88,16.61M19.93,11C19.44,13.3 18.09,15.2 16.26,16.5L15.88,14.54L18.57,13M17.7,5.1C18.87,6.5 19.68,8.16 19.93,10H17.89L16.61,8.12M12,11.5A1.5,1.5 0 0,1 10.5,10A1.5,1.5 0 0,1 12,8.5A1.5,1.5 0 0,1 13.5,10A1.5,1.5 0 0,1 12,11.5Z" /></svg>
+          <h1>Sports Visuals Generator</h1>
+        </div>
+        <p>Your AI-powered assistant for creating stunning sports-themed images.</p>
+      </header>
+      <div id="chat-window">
+        <div id="chat-container">
+          <!-- Chat messages will be dynamically inserted here -->
+        </div>
+      </div>
+      <form id="chat-form">
+        <input
+          type="text"
+          id="prompt-input"
+          placeholder="Describe a sports image..."
+          autocomplete="off"
+          aria-label="Describe a sports image to generate"
+        />
+        <button type="submit" id="send-button" aria-label="Send message">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </form>
+    </main>
+    
+    <!-- Fullscreen Image Viewer -->
+    <div id="fullscreen-viewer" class="fullscreen-viewer">
+      <span id="close-viewer" class="close-viewer">&times;</span>
+      <img id="fullscreen-image" class="fullscreen-image" src="" alt="Fullscreen generated image">
+    </div>
+  </body>
+</html>
